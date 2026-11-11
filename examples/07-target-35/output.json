@@ -1,0 +1,249 @@
+{
+  "schema_version": "1.0",
+  "run_id": "SV-6282835E53",
+  "request_id": "SV-007",
+  "engine": "offline-reference",
+  "model": "reference-policy",
+  "mode_note": "离线参考策略仅验证流程、状态和护栏，不代表真实模型决策效果。",
+  "status": "completed",
+  "outcome": "completed",
+  "task_status": "completed",
+  "stop_reason": "finished",
+  "limits": {
+    "max_steps": 14,
+    "max_tool_calls": 24,
+    "used_steps": 8,
+    "used_tool_calls": 8
+  },
+  "request": {
+    "request_id": "SV-007",
+    "topic": "字幕功能",
+    "audience": "通勤人群",
+    "platform": "抖音",
+    "target_duration_sec": 35,
+    "style": "自然口语",
+    "notes": "初稿 38 秒，压到 34 秒，避免直接压到 28 秒",
+    "missing_fields": []
+  },
+  "title": "字幕功能｜抖音短视频",
+  "storyboard": [
+    {
+      "scene": 1,
+      "name": "开场钩子",
+      "duration_sec": 5,
+      "visual": "人物出镜，字幕点题",
+      "narration": "你有没有遇到这样的问题：字幕功能？",
+      "subtitle": "你有没有遇到这样的问题：字幕功能？",
+      "claim": null,
+      "source_ids": []
+    },
+    {
+      "scene": 2,
+      "name": "场景痛点",
+      "duration_sec": 7,
+      "visual": "通勤或使用场景",
+      "narration": "对通勤人群来说，选错真的很浪费时间。",
+      "subtitle": "对通勤人群来说，选错真的很浪费时间。",
+      "claim": null,
+      "source_ids": []
+    },
+    {
+      "scene": 3,
+      "name": "功能说明",
+      "duration_sec": 12,
+      "visual": "产品功能演示",
+      "narration": "先看核心事实：支持字幕。",
+      "subtitle": "先看核心事实：支持字幕。",
+      "claim": "支持字幕",
+      "source_ids": [
+        "P01"
+      ]
+    },
+    {
+      "scene": 4,
+      "name": "画面演示",
+      "duration_sec": 6,
+      "visual": "实拍画面与字幕",
+      "narration": "画面里也能确认：支持字幕。",
+      "subtitle": "画面里也能确认：支持字幕。",
+      "claim": "支持字幕",
+      "source_ids": [
+        "P01"
+      ]
+    },
+    {
+      "scene": 5,
+      "name": "行动引导",
+      "duration_sec": 4,
+      "visual": "结尾卡片",
+      "narration": "想看完整演示，评论区告诉我。",
+      "subtitle": "想看完整演示，评论区告诉我。",
+      "claim": null,
+      "source_ids": []
+    }
+  ],
+  "estimated_total_sec": 34,
+  "target_duration_sec": 35,
+  "duration_ok": true,
+  "material_sources": [
+    {
+      "id": "P01",
+      "title": "产品字幕能力",
+      "facts": [
+        "支持字幕"
+      ]
+    }
+  ],
+  "rule_check": {
+    "check_id": "CHK-0DADCAB0C7",
+    "script_id": "VID-DAB1C1DFEB",
+    "passed": true,
+    "violations": [],
+    "warnings": [
+      "未使用效果数据，脚本未添加效果结论"
+    ],
+    "checked_total_duration_sec": 34
+  },
+  "revision": {
+    "attempts": [
+      {
+        "script_id": "VID-164B592DDB",
+        "total_duration_sec": 38,
+        "target_duration_sec": 35,
+        "within_target": false
+      },
+      {
+        "script_id": "VID-DAB1C1DFEB",
+        "total_duration_sec": 34,
+        "target_duration_sec": 35,
+        "within_target": true
+      }
+    ],
+    "revised_from": "VID-164B592DDB",
+    "final_version": 2
+  },
+  "risks": [
+    "未使用效果数据，脚本未添加效果结论"
+  ],
+  "script": {
+    "script_id": "VID-DAB1C1DFEB",
+    "version": 2,
+    "template": "compact",
+    "editable": true,
+    "saved": true,
+    "save_status": "saved",
+    "published": false
+  },
+  "saved_script": {
+    "script_id": "VID-DAB1C1DFEB",
+    "save_status": "saved",
+    "status": "saved",
+    "editable": true,
+    "published": false,
+    "total_duration_sec": 34
+  },
+  "gap": null,
+  "plan_steps": [
+    {
+      "step": 1,
+      "tool": "search_materials",
+      "status": "succeeded",
+      "code": "OK",
+      "summary": "素材检索完成",
+      "arguments": {
+        "query": "字幕功能"
+      }
+    },
+    {
+      "step": 2,
+      "tool": "draft_script",
+      "status": "succeeded",
+      "code": "OK",
+      "summary": "脚本初稿生成",
+      "arguments": {
+        "topic": "字幕功能",
+        "audience": "通勤人群",
+        "platform": "抖音",
+        "target_duration_sec": 35,
+        "style": "自然口语",
+        "material_ids": [
+          "P01"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "tool": "estimate_duration",
+      "status": "succeeded",
+      "code": "OK",
+      "summary": "时长估算完成",
+      "arguments": {
+        "script_id": "VID-164B592DDB"
+      }
+    },
+    {
+      "step": 4,
+      "tool": "revise_script",
+      "status": "succeeded",
+      "code": "OK",
+      "summary": "脚本已换模板，等待重新估算",
+      "arguments": {
+        "script_id": "VID-164B592DDB",
+        "target_duration_sec": 35
+      }
+    },
+    {
+      "step": 5,
+      "tool": "estimate_duration",
+      "status": "succeeded",
+      "code": "OK",
+      "summary": "时长估算完成",
+      "arguments": {
+        "script_id": "VID-DAB1C1DFEB"
+      }
+    },
+    {
+      "step": 6,
+      "tool": "check_rules",
+      "status": "succeeded",
+      "code": "OK",
+      "summary": "规则检查完成",
+      "arguments": {
+        "script_id": "VID-DAB1C1DFEB"
+      }
+    },
+    {
+      "step": 7,
+      "tool": "save_script",
+      "status": "succeeded",
+      "code": "OK",
+      "summary": "脚本已保存",
+      "arguments": {
+        "script_id": "VID-DAB1C1DFEB"
+      }
+    },
+    {
+      "step": 8,
+      "tool": "finish",
+      "status": "succeeded",
+      "code": "OK",
+      "summary": "任务结束",
+      "arguments": {
+        "status": "completed",
+        "summary": "脚本 VID-DAB1C1DFEB 已保存，总时长 34 秒，目标 35 秒，规则检查通过。",
+        "risks": [
+          "未使用效果数据，脚本未添加效果结论"
+        ]
+      }
+    }
+  ],
+  "degraded": false,
+  "failed_tool_calls": [],
+  "decision_basis": "脚本 VID-DAB1C1DFEB 已保存，总时长 34 秒，目标 35 秒，规则检查通过。",
+  "summary": {
+    "tools_succeeded": 8,
+    "tools_failed": 0,
+    "estimates": 2,
+    "rule_checks": 1
+  }
+}

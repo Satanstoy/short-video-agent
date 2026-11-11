@@ -1,0 +1,9 @@
+{
+  "request_id": "SV-006",
+  "topic": "字幕功能",
+  "audience": "通勤人群",
+  "platform": "抖音",
+  "target_duration_sec": 15,
+  "style": "自然口语",
+  "notes": "最短只能压到 28 秒，目标 15 秒应明确失败"
+}

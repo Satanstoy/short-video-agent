@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "run_id": "SV-0AE9138EE4",
+  "request_id": "SV-003",
+  "engine": "offline-reference",
+  "model": "reference-policy",
+  "mode_note": "离线参考策略仅验证流程、状态和护栏，不代表真实模型决策效果。",
+  "status": "completed",
+  "outcome": "needs_input",
+  "task_status": "needs_input",
+  "stop_reason": "finished",
+  "limits": {
+    "max_steps": 14,
+    "max_tool_calls": 24,
+    "used_steps": 1,
+    "used_tool_calls": 1
+  },
+  "request": {
+    "request_id": "SV-003",
+    "topic": "字幕功能",
+    "audience": "通勤人群",
+    "platform": "",
+    "target_duration_sec": null,
+    "style": "自然口语",
+    "notes": "缺平台和目标时长",
+    "missing_fields": [
+      "platform",
+      "target_duration_sec"
+    ]
+  },
+  "title": null,
+  "storyboard": [],
+  "estimated_total_sec": null,
+  "target_duration_sec": null,
+  "duration_ok": false,
+  "material_sources": [],
+  "rule_check": null,
+  "revision": {
+    "attempts": [],
+    "revised_from": null,
+    "final_version": null
+  },
+  "risks": [],
+  "script": {
+    "script_id": null,
+    "version": null,
+    "template": null,
+    "editable": false,
+    "saved": false,
+    "save_status": null,
+    "published": false
+  },
+  "saved_script": null,
+  "gap": {
+    "code": "MISSING_INPUT",
+    "fields": [
+      "platform",
+      "target_duration_sec"
+    ]
+  },
+  "plan_steps": [
+    {
+      "step": 1,
+      "tool": "finish",
+      "status": "succeeded",
+      "code": "OK",
+      "summary": "任务结束",
+      "arguments": {
+        "status": "needs_input",
+        "summary": "缺少关键信息：platform, target_duration_sec；未生成脚本。",
+        "gap": {
+          "code": "MISSING_INPUT",
+          "fields": [
+            "platform",
+            "target_duration_sec"
+          ]
+        }
+      }
+    }
+  ],
+  "degraded": false,
+  "failed_tool_calls": [],
+  "decision_basis": "缺少关键信息：platform, target_duration_sec；未生成脚本。",
+  "summary": {
+    "tools_succeeded": 1,
+    "tools_failed": 0,
+    "estimates": 0,
+    "rule_checks": 0
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "schema_version": "1.0",
+  "run_id": "SV-FA42DDAEAC",
+  "request_id": "SV-006",
+  "engine": "offline-reference",
+  "model": "reference-policy",
+  "mode_note": "离线参考策略仅验证流程、状态和护栏，不代表真实模型决策效果。",
+  "status": "completed",
+  "outcome": "cannot_meet_duration",
+  "task_status": "cannot_meet_duration",
+  "stop_reason": "finished",
+  "limits": {
+    "max_steps": 14,
+    "max_tool_calls": 24,
+    "used_steps": 5,
+    "used_tool_calls": 5
+  },
+  "request": {
+    "request_id": "SV-006",
+    "topic": "字幕功能",
+    "audience": "通勤人群",
+    "platform": "抖音",
+    "target_duration_sec": 15,
+    "style": "自然口语",
+    "notes": "最短只能压到 28 秒，目标 15 秒应明确失败",
+    "missing_fields": []
+  },
+  "title": "字幕功能｜抖音短视频",
+  "storyboard": [
+    {
+      "scene": 1,
+      "name": "开场钩子",
+      "duration_sec": 5,
+      "visual": "人物出镜，字幕点题",
+      "narration": "你有没有遇到这样的问题：字幕功能？",
+      "subtitle": "你有没有遇到这样的问题：字幕功能？",
+      "claim": null,
+      "source_ids": []
+    },
+    {
+      "scene": 2,
+      "name": "场景痛点",
+      "duration_sec": 9,
+      "visual": "通勤或使用场景",
+      "narration": "对通勤人群来说，选错真的很浪费时间。",
+      "subtitle": "对通勤人群来说，选错真的很浪费时间。",
+      "claim": null,
+      "source_ids": []
+    },
+    {
+      "scene": 3,
+      "name": "功能说明",
+      "duration_sec": 14,
+      "visual": "产品功能演示",
+      "narration": "先看核心事实：支持字幕。",
+      "subtitle": "先看核心事实：支持字幕。",
+      "claim": "支持字幕",
+      "source_ids": [
+        "P01"
+      ]
+    },
+    {
+      "scene": 4,
+      "name": "画面演示",
+      "duration_sec": 6,
+      "visual": "实拍画面与字幕",
+      "narration": "画面里也能确认：支持字幕。",
+      "subtitle": "画面里也能确认：支持字幕。",
+      "claim": "支持字幕",
+      "source_ids": [
+        "P01"
+      ]
+    },
+    {
+      "scene": 5,
+      "name": "行动引导",
+      "duration_sec": 4,
+      "visual": "结尾卡片",
+      "narration": "想看完整演示，评论区告诉我。",
+      "subtitle": "想看完整演示，评论区告诉我。",
+      "claim": null,
+      "source_ids": []
+    }
+  ],
+  "estimated_total_sec": 38,
+  "target_duration_sec": 15,
+  "duration_ok": false,
+  "material_sources": [
+    {
+      "id": "P01",
+      "title": "产品字幕能力",
+      "facts": [
+        "支持字幕"
+      ]
+    }
+  ],
+  "rule_check": null,
+  "revision": {
+    "attempts": [
+      {
+        "script_id": "VID-55C8EDED7D",
+        "total_duration_sec": 38,
+        "target_duration_sec": 15,
+        "within_target": false
+      }
+    ],
+    "revised_from": null,
+    "final_version": 1
+  },
+  "risks": [
+    "压缩后仍超出目标时长，未保存脚本"
+  ],
+  "script": {
+    "script_id": "VID-55C8EDED7D",
+    "version": 1,
+    "template": "base",
+    "editable": true,
+    "saved": false,
+    "save_status": null,
+    "published": false
+  },
+  "saved_script": null,
+  "gap": {
+    "code": "DURATION",
+    "target_duration_sec": 15,
+    "min_duration_sec": 28,
+    "over_by_sec": 13,
+    "current_total_sec": 38
+  },
+  "plan_steps": [
+    {
+      "step": 1,
+      "tool": "search_materials",
+      "status": "succeeded",
+      "code": "OK",
+      "summary": "素材检索完成",
+      "arguments": {
+        "query": "字幕功能"
+      }
+    },
+    {
+      "step": 2,
+      "tool": "draft_script",
+      "status": "succeeded",
+      "code": "OK",
+      "summary": "脚本初稿生成",
+      "arguments": {
+        "topic": "字幕功能",
+        "audience": "通勤人群",
+        "platform": "抖音",
+        "target_duration_sec": 15,
+        "style": "自然口语",
+        "material_ids": [
+          "P01"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "tool": "estimate_duration",
+      "status": "succeeded",
+      "code": "OK",
+      "summary": "时长估算完成",
+      "arguments": {
+        "script_id": "VID-55C8EDED7D"
+      }
+    },
+    {
+      "step": 4,
+      "tool": "revise_script",
+      "status": "failed",
+      "code": "CANNOT_COMPRESS",
+      "summary": "脚本最短可压缩到 28 秒，无法满足 15 秒",
+      "arguments": {
+        "script_id": "VID-55C8EDED7D",
+        "target_duration_sec": 15
+      }
+    },
+    {
+      "step": 5,
+      "tool": "finish",
+      "status": "succeeded",
+      "code": "OK",
+      "summary": "任务结束",
+      "arguments": {
+        "status": "cannot_meet_duration",
+        "summary": "脚本最短可压缩到 28 秒，目标 15 秒，无法满足。",
+        "risks": [
+          "压缩后仍超出目标时长，未保存脚本"
+        ],
+        "gap": {
+          "code": "DURATION",
+          "target_duration_sec": 15,
+          "min_duration_sec": 28,
+          "over_by_sec": 13,
+          "current_total_sec": 38
+        }
+      }
+    }
+  ],
+  "degraded": true,
+  "failed_tool_calls": [
+    {
+      "tool": "revise_script",
+      "code": "CANNOT_COMPRESS",
+      "summary": "脚本最短可压缩到 28 秒，无法满足 15 秒"
+    }
+  ],
+  "decision_basis": "脚本最短可压缩到 28 秒，目标 15 秒，无法满足。",
+  "summary": {
+    "tools_succeeded": 4,
+    "tools_failed": 1,
+    "estimates": 1,
+    "rule_checks": 0
+  }
+}

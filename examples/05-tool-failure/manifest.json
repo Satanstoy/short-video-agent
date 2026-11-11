@@ -1,0 +1,10 @@
+{
+  "command": "python3 run.py run --input examples/05-tool-failure/input.json --state-dir examples/05-tool-failure --engine offline --fault estimate_duration:2",
+  "engine": "offline",
+  "model": "reference-policy",
+  "faults": [
+    "estimate_duration:2"
+  ],
+  "expected": "tool_error",
+  "final_duration_sec": null
+}

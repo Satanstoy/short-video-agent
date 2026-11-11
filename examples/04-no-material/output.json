@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0",
+  "run_id": "SV-384055C29F",
+  "request_id": "SV-004",
+  "engine": "offline-reference",
+  "model": "reference-policy",
+  "mode_note": "离线参考策略仅验证流程、状态和护栏，不代表真实模型决策效果。",
+  "status": "completed",
+  "outcome": "no_material",
+  "task_status": "no_material",
+  "stop_reason": "finished",
+  "limits": {
+    "max_steps": 14,
+    "max_tool_calls": 24,
+    "used_steps": 3,
+    "used_tool_calls": 3
+  },
+  "request": {
+    "request_id": "SV-004",
+    "topic": "量子计算",
+    "audience": "科技爱好者",
+    "platform": "B 站",
+    "target_duration_sec": 30,
+    "style": "自然口语",
+    "notes": "素材库没有相关内容，不能编造",
+    "missing_fields": []
+  },
+  "title": null,
+  "storyboard": [],
+  "estimated_total_sec": null,
+  "target_duration_sec": 30,
+  "duration_ok": false,
+  "material_sources": [],
+  "rule_check": null,
+  "revision": {
+    "attempts": [],
+    "revised_from": null,
+    "final_version": null
+  },
+  "risks": [],
+  "script": {
+    "script_id": null,
+    "version": null,
+    "template": null,
+    "editable": false,
+    "saved": false,
+    "save_status": null,
+    "published": false
+  },
+  "saved_script": null,
+  "gap": {
+    "code": "NO_MATERIAL",
+    "topic": "量子计算"
+  },
+  "plan_steps": [
+    {
+      "step": 1,
+      "tool": "search_materials",
+      "status": "succeeded",
+      "code": "OK",
+      "summary": "素材检索完成",
+      "arguments": {
+        "query": "量子计算"
+      }
+    },
+    {
+      "step": 2,
+      "tool": "search_materials",
+      "status": "succeeded",
+      "code": "OK",
+      "summary": "素材检索完成",
+      "arguments": {
+        "query": "量子计算 视频"
+      }
+    },
+    {
+      "step": 3,
+      "tool": "finish",
+      "status": "succeeded",
+      "code": "OK",
+      "summary": "任务结束",
+      "arguments": {
+        "status": "no_material",
+        "summary": "素材库没有与“量子计算”相关的事实，未生成脚本。",
+        "gap": {
+          "code": "NO_MATERIAL",
+          "topic": "量子计算"
+        }
+      }
+    }
+  ],
+  "degraded": false,
+  "failed_tool_calls": [],
+  "decision_basis": "素材库没有与“量子计算”相关的事实，未生成脚本。",
+  "summary": {
+    "tools_succeeded": 3,
+    "tools_failed": 0,
+    "estimates": 0,
+    "rule_checks": 0
+  }
+}

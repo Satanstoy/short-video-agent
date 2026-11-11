@@ -1,0 +1,8 @@
+{
+  "command": "python3 run.py run --input examples/06-impossible-duration/input.json --state-dir examples/06-impossible-duration --engine offline",
+  "engine": "offline",
+  "model": "reference-policy",
+  "faults": [],
+  "expected": "cannot_meet_duration",
+  "final_duration_sec": 38
+}

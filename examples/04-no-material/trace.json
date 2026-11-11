@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0",
+  "run_id": "SV-384055C29F",
+  "engine": "offline-reference",
+  "model": "reference-policy",
+  "mode_note": "离线参考策略仅验证流程、状态和护栏，不代表真实模型决策效果。",
+  "request": {
+    "request_id": "SV-004",
+    "topic": "量子计算",
+    "audience": "科技爱好者",
+    "platform": "B 站",
+    "target_duration_sec": 30,
+    "style": "自然口语",
+    "notes": "素材库没有相关内容，不能编造",
+    "missing_fields": []
+  },
+  "limits": {
+    "max_steps": 14,
+    "max_tool_calls": 24
+  },
+  "prompt_sha256": "offline-reference-policy",
+  "started_at": "2026-11-11T17:08:13+0800",
+  "steps": [
+    {
+      "type": "model_decision",
+      "model_step": 1,
+      "assistant_text": "",
+      "tool_calls": [
+        {
+          "id": "call_1",
+          "name": "search_materials",
+          "arguments": {
+            "query": "量子计算"
+          },
+          "reason": "先检索产品素材事实。"
+        }
+      ],
+      "index": 1
+    },
+    {
+      "type": "tool_result",
+      "model_step": 1,
+      "tool_call_id": "call_1",
+      "tool": "search_materials",
+      "arguments": {
+        "query": "量子计算"
+      },
+      "ok": true,
+      "code": "OK",
+      "summary": "素材检索完成",
+      "data": {
+        "query": "量子计算",
+        "hits": [],
+        "hit_count": 0
+      },
+      "error": null,
+      "elapsed_ms": 0,
+      "index": 2
+    },
+    {
+      "type": "model_decision",
+      "model_step": 2,
+      "assistant_text": "",
+      "tool_calls": [
+        {
+          "id": "call_2",
+          "name": "search_materials",
+          "arguments": {
+            "query": "量子计算 视频"
+          },
+          "reason": "没有检索结果，改写查询重试。"
+        }
+      ],
+      "index": 3
+    },
+    {
+      "type": "tool_result",
+      "model_step": 2,
+      "tool_call_id": "call_2",
+      "tool": "search_materials",
+      "arguments": {
+        "query": "量子计算 视频"
+      },
+      "ok": true,
+      "code": "OK",
+      "summary": "素材检索完成",
+      "data": {
+        "query": "量子计算 视频",
+        "hits": [],
+        "hit_count": 0
+      },
+      "error": null,
+      "elapsed_ms": 0,
+      "index": 4
+    },
+    {
+      "type": "model_decision",
+      "model_step": 3,
+      "assistant_text": "",
+      "tool_calls": [
+        {
+          "id": "call_3",
+          "name": "finish",
+          "arguments": {
+            "status": "no_material",
+            "summary": "素材库没有与“量子计算”相关的事实，未生成脚本。",
+            "gap": {
+              "code": "NO_MATERIAL",
+              "topic": "量子计算"
+            }
+          },
+          "reason": "没有素材依据，不能编造产品事实。"
+        }
+      ],
+      "index": 5
+    },
+    {
+      "type": "tool_result",
+      "model_step": 3,
+      "tool_call_id": "call_3",
+      "tool": "finish",
+      "arguments": {
+        "status": "no_material",
+        "summary": "素材库没有与“量子计算”相关的事实，未生成脚本。",
+        "gap": {
+          "code": "NO_MATERIAL",
+          "topic": "量子计算"
+        }
+      },
+      "ok": true,
+      "code": "OK",
+      "summary": "任务结束",
+      "data": {
+        "status": "no_material",
+        "summary": "素材库没有与“量子计算”相关的事实，未生成脚本。",
+        "risks": [],
+        "gap": {
+          "code": "NO_MATERIAL",
+          "topic": "量子计算"
+        }
+      },
+      "error": null,
+      "elapsed_ms": 0,
+      "index": 6
+    }
+  ],
+  "finished_at": "2026-11-11T17:08:13+0800",
+  "result": {
+    "status": "completed",
+    "outcome": "no_material",
+    "stop_reason": "finished"
+  }
+}

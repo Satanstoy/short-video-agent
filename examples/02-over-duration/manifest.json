@@ -1,0 +1,8 @@
+{
+  "command": "python3 run.py run --input examples/02-over-duration/input.json --state-dir examples/02-over-duration --engine offline",
+  "engine": "offline",
+  "model": "reference-policy",
+  "faults": [],
+  "expected": "completed",
+  "final_duration_sec": 28
+}

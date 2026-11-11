@@ -1,0 +1,9 @@
+{
+  "request_id": "SV-005",
+  "topic": "字幕功能",
+  "audience": "通勤人群",
+  "platform": "抖音",
+  "target_duration_sec": 30,
+  "style": "自然口语",
+  "notes": "时长估算连续失败，初稿应保留但任务不能完成"
+}

@@ -1,0 +1,8 @@
+{
+  "command": "python3 run.py run --input examples/04-no-material/input.json --state-dir examples/04-no-material --engine offline",
+  "engine": "offline",
+  "model": "reference-policy",
+  "faults": [],
+  "expected": "no_material",
+  "final_duration_sec": null
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "scripts": {
+    "VID-DAB1C1DFEB": {
+      "script_id": "VID-DAB1C1DFEB",
+      "version": 2,
+      "template": "compact",
+      "title": "字幕功能｜抖音短视频",
+      "topic": "字幕功能",
+      "audience": "通勤人群",
+      "platform": "抖音",
+      "style": "自然口语",
+      "target_duration_sec": 35,
+      "scenes": [
+        {
+          "scene": 1,
+          "name": "开场钩子",
+          "duration_sec": 5,
+          "visual": "人物出镜，字幕点题",
+          "narration": "你有没有遇到这样的问题：字幕功能？",
+          "subtitle": "你有没有遇到这样的问题：字幕功能？",
+          "claim": null,
+          "source_ids": []
+        },
+        {
+          "scene": 2,
+          "name": "场景痛点",
+          "duration_sec": 7,
+          "visual": "通勤或使用场景",
+          "narration": "对通勤人群来说，选错真的很浪费时间。",
+          "subtitle": "对通勤人群来说，选错真的很浪费时间。",
+          "claim": null,
+          "source_ids": []
+        },
+        {
+          "scene": 3,
+          "name": "功能说明",
+          "duration_sec": 12,
+          "visual": "产品功能演示",
+          "narration": "先看核心事实：支持字幕。",
+          "subtitle": "先看核心事实：支持字幕。",
+          "claim": "支持字幕",
+          "source_ids": [
+            "P01"
+          ]
+        },
+        {
+          "scene": 4,
+          "name": "画面演示",
+          "duration_sec": 6,
+          "visual": "实拍画面与字幕",
+          "narration": "画面里也能确认：支持字幕。",
+          "subtitle": "画面里也能确认：支持字幕。",
+          "claim": "支持字幕",
+          "source_ids": [
+            "P01"
+          ]
+        },
+        {
+          "scene": 5,
+          "name": "行动引导",
+          "duration_sec": 4,
+          "visual": "结尾卡片",
+          "narration": "想看完整演示，评论区告诉我。",
+          "subtitle": "想看完整演示，评论区告诉我。",
+          "claim": null,
+          "source_ids": []
+        }
+      ],
+      "total_duration_sec": 34,
+      "material_ids": [
+        "P01"
+      ],
+      "facts": [
+        "支持字幕"
+      ],
+      "revised_from": "VID-164B592DDB",
+      "editable": true,
+      "status": "saved",
+      "published": false
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "command": "python3 run.py run --input examples/03-missing-info/input.json --state-dir examples/03-missing-info --engine offline",
+  "engine": "offline",
+  "model": "reference-policy",
+  "faults": [],
+  "expected": "needs_input",
+  "final_duration_sec": null
+}

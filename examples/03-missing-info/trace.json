@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "run_id": "SV-0AE9138EE4",
+  "engine": "offline-reference",
+  "model": "reference-policy",
+  "mode_note": "离线参考策略仅验证流程、状态和护栏，不代表真实模型决策效果。",
+  "request": {
+    "request_id": "SV-003",
+    "topic": "字幕功能",
+    "audience": "通勤人群",
+    "platform": "",
+    "target_duration_sec": null,
+    "style": "自然口语",
+    "notes": "缺平台和目标时长",
+    "missing_fields": [
+      "platform",
+      "target_duration_sec"
+    ]
+  },
+  "limits": {
+    "max_steps": 14,
+    "max_tool_calls": 24
+  },
+  "prompt_sha256": "offline-reference-policy",
+  "started_at": "2026-11-11T17:08:13+0800",
+  "steps": [
+    {
+      "type": "model_decision",
+      "model_step": 1,
+      "assistant_text": "",
+      "tool_calls": [
+        {
+          "id": "call_1",
+          "name": "finish",
+          "arguments": {
+            "status": "needs_input",
+            "summary": "缺少关键信息：platform, target_duration_sec；未生成脚本。",
+            "gap": {
+              "code": "MISSING_INPUT",
+              "fields": [
+                "platform",
+                "target_duration_sec"
+              ]
+            }
+          },
+          "reason": "主题、平台或目标时长不完整，先返回缺口。"
+        }
+      ],
+      "index": 1
+    },
+    {
+      "type": "tool_result",
+      "model_step": 1,
+      "tool_call_id": "call_1",
+      "tool": "finish",
+      "arguments": {
+        "status": "needs_input",
+        "summary": "缺少关键信息：platform, target_duration_sec；未生成脚本。",
+        "gap": {
+          "code": "MISSING_INPUT",
+          "fields": [
+            "platform",
+            "target_duration_sec"
+          ]
+        }
+      },
+      "ok": true,
+      "code": "OK",
+      "summary": "任务结束",
+      "data": {
+        "status": "needs_input",
+        "summary": "缺少关键信息：platform, target_duration_sec；未生成脚本。",
+        "risks": [],
+        "gap": {
+          "code": "MISSING_INPUT",
+          "fields": [
+            "platform",
+            "target_duration_sec"
+          ]
+        }
+      },
+      "error": null,
+      "elapsed_ms": 0,
+      "index": 2
+    }
+  ],
+  "finished_at": "2026-11-11T17:08:13+0800",
+  "result": {
+    "status": "completed",
+    "outcome": "needs_input",
+    "stop_reason": "finished"
+  }
+}

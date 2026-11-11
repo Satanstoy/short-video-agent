@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "scripts": {
+    "VID-CF50A6BCD4": {
+      "script_id": "VID-CF50A6BCD4",
+      "version": 2,
+      "template": "compressed",
+      "title": "字幕功能｜抖音短视频",
+      "topic": "字幕功能",
+      "audience": "通勤人群",
+      "platform": "抖音",
+      "style": "自然口语",
+      "target_duration_sec": 30,
+      "scenes": [
+        {
+          "scene": 1,
+          "name": "开场钩子",
+          "duration_sec": 4,
+          "visual": "人物出镜，字幕点题",
+          "narration": "还在纠结：字幕功能？",
+          "subtitle": "还在纠结：字幕功能？",
+          "claim": null,
+          "source_ids": []
+        },
+        {
+          "scene": 2,
+          "name": "场景痛点",
+          "duration_sec": 6,
+          "visual": "通勤或使用场景",
+          "narration": "对通勤人群来说，时间很宝贵。",
+          "subtitle": "对通勤人群来说，时间很宝贵。",
+          "claim": null,
+          "source_ids": []
+        },
+        {
+          "scene": 3,
+          "name": "功能说明",
+          "duration_sec": 10,
+          "visual": "产品功能演示",
+          "narration": "核心事实：支持字幕。",
+          "subtitle": "核心事实：支持字幕。",
+          "claim": "支持字幕",
+          "source_ids": [
+            "P01"
+          ]
+        },
+        {
+          "scene": 4,
+          "name": "画面演示",
+          "duration_sec": 4,
+          "visual": "实拍画面与字幕",
+          "narration": "画面确认：支持字幕。",
+          "subtitle": "画面确认：支持字幕。",
+          "claim": "支持字幕",
+          "source_ids": [
+            "P01"
+          ]
+        },
+        {
+          "scene": 5,
+          "name": "行动引导",
+          "duration_sec": 4,
+          "visual": "结尾卡片",
+          "narration": "想看更多，评论区见。",
+          "subtitle": "想看更多，评论区见。",
+          "claim": null,
+          "source_ids": []
+        }
+      ],
+      "total_duration_sec": 28,
+      "material_ids": [
+        "P01"
+      ],
+      "facts": [
+        "支持字幕"
+      ],
+      "revised_from": "VID-84D5BFA94F",
+      "editable": true,
+      "status": "saved",
+      "published": false
+    }
+  }
+}

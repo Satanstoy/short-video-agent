@@ -1,0 +1,8 @@
+{
+  "command": "python3 run.py run --input examples/07-target-35/input.json --state-dir examples/07-target-35 --engine offline",
+  "engine": "offline",
+  "model": "reference-policy",
+  "faults": [],
+  "expected": "completed",
+  "final_duration_sec": 34
+}

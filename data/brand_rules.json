@@ -1,0 +1,6 @@
+{
+  "banned_claims": ["提升80%", "提升 80%", "行业第一", "国家级", "100%", "绝对"],
+  "max_duration_sec": 60,
+  "min_duration_sec": 15,
+  "require_source": true
+}

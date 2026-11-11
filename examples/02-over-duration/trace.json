@@ -1,0 +1,565 @@
+{
+  "schema_version": "1.0",
+  "run_id": "SV-C08BC6B59D",
+  "engine": "offline-reference",
+  "model": "reference-policy",
+  "mode_note": "离线参考策略仅验证流程、状态和护栏，不代表真实模型决策效果。",
+  "request": {
+    "request_id": "SV-002",
+    "topic": "字幕功能",
+    "audience": "通勤人群",
+    "platform": "抖音",
+    "target_duration_sec": 30,
+    "style": "自然口语",
+    "notes": "初稿 38 秒，应压缩到 28 秒并重新估算",
+    "missing_fields": []
+  },
+  "limits": {
+    "max_steps": 14,
+    "max_tool_calls": 24
+  },
+  "prompt_sha256": "offline-reference-policy",
+  "started_at": "2026-11-11T17:08:13+0800",
+  "steps": [
+    {
+      "type": "model_decision",
+      "model_step": 1,
+      "assistant_text": "",
+      "tool_calls": [
+        {
+          "id": "call_1",
+          "name": "search_materials",
+          "arguments": {
+            "query": "字幕功能"
+          },
+          "reason": "先检索产品素材事实。"
+        }
+      ],
+      "index": 1
+    },
+    {
+      "type": "tool_result",
+      "model_step": 1,
+      "tool_call_id": "call_1",
+      "tool": "search_materials",
+      "arguments": {
+        "query": "字幕功能"
+      },
+      "ok": true,
+      "code": "OK",
+      "summary": "素材检索完成",
+      "data": {
+        "query": "字幕功能",
+        "hits": [
+          {
+            "id": "P01",
+            "title": "产品字幕能力",
+            "facts": [
+              "支持字幕"
+            ],
+            "score": 2
+          }
+        ],
+        "hit_count": 1
+      },
+      "error": null,
+      "elapsed_ms": 0,
+      "index": 2
+    },
+    {
+      "type": "model_decision",
+      "model_step": 2,
+      "assistant_text": "",
+      "tool_calls": [
+        {
+          "id": "call_2",
+          "name": "draft_script",
+          "arguments": {
+            "topic": "字幕功能",
+            "audience": "通勤人群",
+            "platform": "抖音",
+            "target_duration_sec": 30,
+            "style": "自然口语",
+            "material_ids": [
+              "P01"
+            ]
+          },
+          "reason": "用检索到的素材事实生成脚本初稿。"
+        }
+      ],
+      "index": 3
+    },
+    {
+      "type": "tool_result",
+      "model_step": 2,
+      "tool_call_id": "call_2",
+      "tool": "draft_script",
+      "arguments": {
+        "topic": "字幕功能",
+        "audience": "通勤人群",
+        "platform": "抖音",
+        "target_duration_sec": 30,
+        "style": "自然口语",
+        "material_ids": [
+          "P01"
+        ]
+      },
+      "ok": true,
+      "code": "OK",
+      "summary": "脚本初稿生成",
+      "data": {
+        "script_id": "VID-84D5BFA94F",
+        "version": 1,
+        "template": "base",
+        "title": "字幕功能｜抖音短视频",
+        "topic": "字幕功能",
+        "audience": "通勤人群",
+        "platform": "抖音",
+        "style": "自然口语",
+        "target_duration_sec": 30,
+        "scenes": [
+          {
+            "scene": 1,
+            "name": "开场钩子",
+            "duration_sec": 5,
+            "visual": "人物出镜，字幕点题",
+            "narration": "你有没有遇到这样的问题：字幕功能？",
+            "subtitle": "你有没有遇到这样的问题：字幕功能？",
+            "claim": null,
+            "source_ids": []
+          },
+          {
+            "scene": 2,
+            "name": "场景痛点",
+            "duration_sec": 9,
+            "visual": "通勤或使用场景",
+            "narration": "对通勤人群来说，选错真的很浪费时间。",
+            "subtitle": "对通勤人群来说，选错真的很浪费时间。",
+            "claim": null,
+            "source_ids": []
+          },
+          {
+            "scene": 3,
+            "name": "功能说明",
+            "duration_sec": 14,
+            "visual": "产品功能演示",
+            "narration": "先看核心事实：支持字幕。",
+            "subtitle": "先看核心事实：支持字幕。",
+            "claim": "支持字幕",
+            "source_ids": [
+              "P01"
+            ]
+          },
+          {
+            "scene": 4,
+            "name": "画面演示",
+            "duration_sec": 6,
+            "visual": "实拍画面与字幕",
+            "narration": "画面里也能确认：支持字幕。",
+            "subtitle": "画面里也能确认：支持字幕。",
+            "claim": "支持字幕",
+            "source_ids": [
+              "P01"
+            ]
+          },
+          {
+            "scene": 5,
+            "name": "行动引导",
+            "duration_sec": 4,
+            "visual": "结尾卡片",
+            "narration": "想看完整演示，评论区告诉我。",
+            "subtitle": "想看完整演示，评论区告诉我。",
+            "claim": null,
+            "source_ids": []
+          }
+        ],
+        "total_duration_sec": 38,
+        "material_ids": [
+          "P01"
+        ],
+        "facts": [
+          "支持字幕"
+        ],
+        "revised_from": null,
+        "editable": true
+      },
+      "error": null,
+      "elapsed_ms": 0,
+      "index": 4
+    },
+    {
+      "type": "model_decision",
+      "model_step": 3,
+      "assistant_text": "",
+      "tool_calls": [
+        {
+          "id": "call_3",
+          "name": "estimate_duration",
+          "arguments": {
+            "script_id": "VID-84D5BFA94F"
+          },
+          "reason": "按分镜估算总时长。"
+        }
+      ],
+      "index": 5
+    },
+    {
+      "type": "tool_result",
+      "model_step": 3,
+      "tool_call_id": "call_3",
+      "tool": "estimate_duration",
+      "arguments": {
+        "script_id": "VID-84D5BFA94F"
+      },
+      "ok": true,
+      "code": "OK",
+      "summary": "时长估算完成",
+      "data": {
+        "estimate_id": "DUR-9288A41C00",
+        "script_id": "VID-84D5BFA94F",
+        "total_duration_sec": 38,
+        "target_duration_sec": 30,
+        "within_target": false,
+        "over_target_by_sec": 8,
+        "scene_durations": [
+          {
+            "scene": 1,
+            "name": "开场钩子",
+            "duration_sec": 5
+          },
+          {
+            "scene": 2,
+            "name": "场景痛点",
+            "duration_sec": 9
+          },
+          {
+            "scene": 3,
+            "name": "功能说明",
+            "duration_sec": 14
+          },
+          {
+            "scene": 4,
+            "name": "画面演示",
+            "duration_sec": 6
+          },
+          {
+            "scene": 5,
+            "name": "行动引导",
+            "duration_sec": 4
+          }
+        ]
+      },
+      "error": null,
+      "elapsed_ms": 0,
+      "index": 6
+    },
+    {
+      "type": "model_decision",
+      "model_step": 4,
+      "assistant_text": "",
+      "tool_calls": [
+        {
+          "id": "call_4",
+          "name": "revise_script",
+          "arguments": {
+            "script_id": "VID-84D5BFA94F",
+            "target_duration_sec": 30
+          },
+          "reason": "初稿 38 秒超过目标，压缩脚本。"
+        }
+      ],
+      "index": 7
+    },
+    {
+      "type": "tool_result",
+      "model_step": 4,
+      "tool_call_id": "call_4",
+      "tool": "revise_script",
+      "arguments": {
+        "script_id": "VID-84D5BFA94F",
+        "target_duration_sec": 30
+      },
+      "ok": true,
+      "code": "OK",
+      "summary": "脚本已换模板，等待重新估算",
+      "data": {
+        "script_id": "VID-CF50A6BCD4",
+        "version": 2,
+        "template": "compressed",
+        "title": "字幕功能｜抖音短视频",
+        "topic": "字幕功能",
+        "audience": "通勤人群",
+        "platform": "抖音",
+        "style": "自然口语",
+        "target_duration_sec": 30,
+        "scenes": [
+          {
+            "scene": 1,
+            "name": "开场钩子",
+            "duration_sec": 4,
+            "visual": "人物出镜，字幕点题",
+            "narration": "还在纠结：字幕功能？",
+            "subtitle": "还在纠结：字幕功能？",
+            "claim": null,
+            "source_ids": []
+          },
+          {
+            "scene": 2,
+            "name": "场景痛点",
+            "duration_sec": 6,
+            "visual": "通勤或使用场景",
+            "narration": "对通勤人群来说，时间很宝贵。",
+            "subtitle": "对通勤人群来说，时间很宝贵。",
+            "claim": null,
+            "source_ids": []
+          },
+          {
+            "scene": 3,
+            "name": "功能说明",
+            "duration_sec": 10,
+            "visual": "产品功能演示",
+            "narration": "核心事实：支持字幕。",
+            "subtitle": "核心事实：支持字幕。",
+            "claim": "支持字幕",
+            "source_ids": [
+              "P01"
+            ]
+          },
+          {
+            "scene": 4,
+            "name": "画面演示",
+            "duration_sec": 4,
+            "visual": "实拍画面与字幕",
+            "narration": "画面确认：支持字幕。",
+            "subtitle": "画面确认：支持字幕。",
+            "claim": "支持字幕",
+            "source_ids": [
+              "P01"
+            ]
+          },
+          {
+            "scene": 5,
+            "name": "行动引导",
+            "duration_sec": 4,
+            "visual": "结尾卡片",
+            "narration": "想看更多，评论区见。",
+            "subtitle": "想看更多，评论区见。",
+            "claim": null,
+            "source_ids": []
+          }
+        ],
+        "total_duration_sec": 28,
+        "material_ids": [
+          "P01"
+        ],
+        "facts": [
+          "支持字幕"
+        ],
+        "revised_from": "VID-84D5BFA94F",
+        "editable": true
+      },
+      "error": null,
+      "elapsed_ms": 0,
+      "index": 8
+    },
+    {
+      "type": "model_decision",
+      "model_step": 5,
+      "assistant_text": "",
+      "tool_calls": [
+        {
+          "id": "call_5",
+          "name": "estimate_duration",
+          "arguments": {
+            "script_id": "VID-CF50A6BCD4"
+          },
+          "reason": "按分镜估算总时长。"
+        }
+      ],
+      "index": 9
+    },
+    {
+      "type": "tool_result",
+      "model_step": 5,
+      "tool_call_id": "call_5",
+      "tool": "estimate_duration",
+      "arguments": {
+        "script_id": "VID-CF50A6BCD4"
+      },
+      "ok": true,
+      "code": "OK",
+      "summary": "时长估算完成",
+      "data": {
+        "estimate_id": "DUR-F86A3F75F9",
+        "script_id": "VID-CF50A6BCD4",
+        "total_duration_sec": 28,
+        "target_duration_sec": 30,
+        "within_target": true,
+        "over_target_by_sec": 0,
+        "scene_durations": [
+          {
+            "scene": 1,
+            "name": "开场钩子",
+            "duration_sec": 4
+          },
+          {
+            "scene": 2,
+            "name": "场景痛点",
+            "duration_sec": 6
+          },
+          {
+            "scene": 3,
+            "name": "功能说明",
+            "duration_sec": 10
+          },
+          {
+            "scene": 4,
+            "name": "画面演示",
+            "duration_sec": 4
+          },
+          {
+            "scene": 5,
+            "name": "行动引导",
+            "duration_sec": 4
+          }
+        ]
+      },
+      "error": null,
+      "elapsed_ms": 0,
+      "index": 10
+    },
+    {
+      "type": "model_decision",
+      "model_step": 6,
+      "assistant_text": "",
+      "tool_calls": [
+        {
+          "id": "call_6",
+          "name": "check_rules",
+          "arguments": {
+            "script_id": "VID-CF50A6BCD4"
+          },
+          "reason": "时长达标，检查品牌规则和事实来源。"
+        }
+      ],
+      "index": 11
+    },
+    {
+      "type": "tool_result",
+      "model_step": 6,
+      "tool_call_id": "call_6",
+      "tool": "check_rules",
+      "arguments": {
+        "script_id": "VID-CF50A6BCD4"
+      },
+      "ok": true,
+      "code": "OK",
+      "summary": "规则检查完成",
+      "data": {
+        "check_id": "CHK-F86A3F75F9",
+        "script_id": "VID-CF50A6BCD4",
+        "passed": true,
+        "violations": [],
+        "warnings": [
+          "未使用效果数据，脚本未添加效果结论"
+        ],
+        "checked_total_duration_sec": 28
+      },
+      "error": null,
+      "elapsed_ms": 0,
+      "index": 12
+    },
+    {
+      "type": "model_decision",
+      "model_step": 7,
+      "assistant_text": "",
+      "tool_calls": [
+        {
+          "id": "call_7",
+          "name": "save_script",
+          "arguments": {
+            "script_id": "VID-CF50A6BCD4"
+          },
+          "reason": "时长和规则都通过，保存可编辑脚本。"
+        }
+      ],
+      "index": 13
+    },
+    {
+      "type": "tool_result",
+      "model_step": 7,
+      "tool_call_id": "call_7",
+      "tool": "save_script",
+      "arguments": {
+        "script_id": "VID-CF50A6BCD4"
+      },
+      "ok": true,
+      "code": "OK",
+      "summary": "脚本已保存",
+      "data": {
+        "script_id": "VID-CF50A6BCD4",
+        "save_status": "saved",
+        "status": "saved",
+        "editable": true,
+        "published": false,
+        "total_duration_sec": 28
+      },
+      "error": null,
+      "elapsed_ms": 0,
+      "index": 14
+    },
+    {
+      "type": "model_decision",
+      "model_step": 8,
+      "assistant_text": "",
+      "tool_calls": [
+        {
+          "id": "call_8",
+          "name": "finish",
+          "arguments": {
+            "status": "completed",
+            "summary": "脚本 VID-CF50A6BCD4 已保存，总时长 28 秒，目标 30 秒，规则检查通过。",
+            "risks": [
+              "未使用效果数据，脚本未添加效果结论"
+            ]
+          },
+          "reason": "脚本已保存且检查通过，汇报结果。"
+        }
+      ],
+      "index": 15
+    },
+    {
+      "type": "tool_result",
+      "model_step": 8,
+      "tool_call_id": "call_8",
+      "tool": "finish",
+      "arguments": {
+        "status": "completed",
+        "summary": "脚本 VID-CF50A6BCD4 已保存，总时长 28 秒，目标 30 秒，规则检查通过。",
+        "risks": [
+          "未使用效果数据，脚本未添加效果结论"
+        ]
+      },
+      "ok": true,
+      "code": "OK",
+      "summary": "任务结束",
+      "data": {
+        "status": "completed",
+        "summary": "脚本 VID-CF50A6BCD4 已保存，总时长 28 秒，目标 30 秒，规则检查通过。",
+        "risks": [
+          "未使用效果数据，脚本未添加效果结论"
+        ],
+        "gap": null
+      },
+      "error": null,
+      "elapsed_ms": 0,
+      "index": 16
+    }
+  ],
+  "finished_at": "2026-11-11T17:08:13+0800",
+  "result": {
+    "status": "completed",
+    "outcome": "completed",
+    "stop_reason": "finished"
+  }
+}
